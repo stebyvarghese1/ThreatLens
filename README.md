@@ -12,6 +12,48 @@
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=16&duration=2500&pause=1000&color=38BDF8&center=true&vCenter=true&width=380&lines=Development+Ongoing......" alt="development ongoing......" />
 </p>
 
+
+<br>
+
+
+
+
+
+
+### Windows 10 / 11 — x64
+
+Download and Test the ThreatLens installer for **64-bit Windows 10 and Windows 11**:
+
+**[⬇️ Download ThreatLens for Windows x64](https://drive.google.com/file/d/1Gse_VsVDe8GeS5ZgExggnpuZPO6x2pT_/view?usp=sharing)**
+
+**Installer:** `threatlens_setup.exe`
+
+### System Requirements
+
+ **OS:** Windows 10 / Windows 11
+ **Architecture:** x64 (64-bit)
+ **Installer:** `threatlens_setup.exe`
+
+> **Note:** ThreatLens is currently provided as a Windows x64 application. Download and run the installer to install ThreatLens on your PC.
+
+
+
+
+
+
+
+
+
+<br>
+<br>
+<br>
+
+
+
+
+
+
+
 <h3><b><code>&gt; THREATLENS // NEXT-GEN CYBER TRANSPARENCY &amp; ENDPOINT TELEMETRY</code></b></h3>
 
 <p align="center">
