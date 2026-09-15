@@ -5,7 +5,7 @@
 <br>
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/7d121413-1641-4928-b2f4-d10242d8d4ee" alt="ThreatLens Shield Emblem" width="130" height="130" style="filter: drop-shadow(0 0 16px rgba(56, 189, 248, 0.45));" />
+  <img src="https://github.com/user-attachments/assets/ba4f6745-c181-4b89-892d-4c6f7425b9a7" alt="ThreatLens Shield Emblem" width="130" height="130" style="filter: drop-shadow(0 0 16px rgba(56, 189, 248, 0.45));" />
 </p>
 
 <p align="center">
