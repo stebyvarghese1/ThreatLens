@@ -41,7 +41,7 @@
 &nbsp;
 [![Forks](https://img.shields.io/github/forks/stebyvarghese1/ThreatLens?style=flat-square&color=0284c7&label=Forks)](https://github.com/stebyvarghese1/ThreatLens/forks)
 &nbsp;
-[![Tests](https://img.shields.io/badge/TEST_SUITE-38%2F38%20PASSING-10B981?style=flat-square&logo=pytest&logoColor=white)](tests/)
+[![Tests](https://img.shields.io/badge/TEST_SUITE-49%2F49%20PASSING-10B981?style=flat-square&logo=pytest&logoColor=white)](tests/)
 &nbsp;
 [![Operated by](https://img.shields.io/badge/SECURITY_ARCHITECT-Steby%20Varghese-38bdf8?style=flat-square)](https://github.com/stebyvarghese1)
 
@@ -58,7 +58,7 @@ Download the standalone setup wizard for **64-bit Windows 10 & Windows 11**:
 
 <br>
 
-<a href="https://drive.google.com/file/d/1kt8r0OemG-19bMiLoYqa59zfpYB1Fw2b/view?usp=sharing">
+<a href="(https://drive.google.com/file/d/1kt8r0OemG-19bMiLoYqa59zfpYB1Fw2b/view?usp=sharing)">
   <img src="https://img.shields.io/badge/DOWNLOAD-THREATLENS%20SETUP%20(x64)-0284c7?style=for-the-badge&logo=windows&logoColor=white" height="42" alt="Download ThreatLens Setup" />
 </a>
 
@@ -187,9 +187,11 @@ When legacy antivirus detects suspicious behavior, it flashes a vague pop-up: `"
 | <kbd>ARMED</kbd> | **Endpoint Firewall Isolator** | Windows NetSh / AdvFirewall | Instant network isolation cutting inbound and outbound connectivity for active malicious processes. |
 | <kbd>ACTIVE</kbd> | **Clipboard Clipper Sentry** | Regex & Shannon Entropy | Real-time clipboard surveillance to intercept and neutralize cryptocurrency address hijackers. |
 | <kbd>ARMED</kbd> | **Persistence Watchdog** | `winreg` Native Hive Sentinel | Real-time surveillance over Windows Registry `Run`, `RunOnce`, and Startup auto-start hooks. |
+| <kbd>ACTIVE</kbd> | **Windows Event Log Sentinel** | `wevtutil` Native XML API | Continuous background surveillance over `System`, `Application`, `PowerShell`, and `Security` with plain-English translation. |
 | <kbd>ARMED</kbd> | **Canary Ransomware Decoys** | Honeypot Canary Tripwires | Hidden decoy files (`.threatlens_canary.docx`) trigger emergency quarantine upon encryption. |
 | <kbd>ARMED</kbd> | **Local Tamper Self-Defense** | OS File Lock & Integrity Sentinel | Locks ThreatLens SQLite DB, local models, and quarantine vault against unauthorized external modification. |
 | <kbd>SECURE</kbd> | **XOR Encrypted Vault** | Byte-Transformation Sandbox | Reversible containment chamber preventing accidental execution with smart system-fallback protection. |
+| <kbd>ACTIVE</kbd> | **Forensic Log File Dropzone** | Multi-Format Offline Analyzer | Drag-and-drop parser for `.evtx`, `.log`, `.json`, `.csv`, `.txt` with automated MITRE ATT&CK audit reports. |
 
 </div>
 
@@ -203,6 +205,7 @@ When legacy antivirus detects suspicious behavior, it flashes a vague pop-up: `"
 |:---:|---|---|---|
 | <kbd>ONLINE</kbd> | **0–100 Health Scoring** | Multi-factor Risk Aggregation | Explains every single deduction point in clear, human-understandable terms. |
 | <kbd>ONLINE</kbd> | **"Why?" Contextual Engine** | 5-Point Explainability Grammar | Instant breakdown: *What happened? Who did it? Where? Why does it matter? Recommended action.* |
+| <kbd>ONLINE</kbd> | **Plain-English Log Translator** | Contextual Natural Language Decoders | Translates complex Windows internal events (DCOM, services, crashes) into everyday human language for non-tech users. |
 | <kbd>ONLINE</kbd> | **Plain-English Reasons** | Action-Specific Decoders | Explains why programs execute, what they are doing, and provides clear threat categorizations. |
 | <kbd>LEARNING</kbd> | **Application Profiler** | Baseline Habit Learning | Calculates a dynamic 0–100% Trust Meter and flags unexpected outbound network bursts. |
 | <kbd>READY</kbd> | **"Ask ThreatLens" Q&A** | Deterministic Intent Parser | Offline assistant answering *"What happened on my PC today?"* or *"Why is my system slow?"* |
@@ -210,6 +213,28 @@ When legacy antivirus detects suspicious behavior, it flashes a vague pop-up: `"
 | <kbd>SYNCED</kbd> | **User Decision Memory** | Persistent Allowlist Memory | Learns developer exceptions and trusted tools to permanently eliminate alert fatigue. |
 
 </div>
+
+<br>
+
+### 📜 Universal Windows & Security Log Observability
+
+ThreatLens translates cryptic Windows event logs into plain, everyday English so non-technical users can understand exactly what their PC is doing without feeling overwhelmed by hex error codes, unparsed GUIDs, or complex XML tags.
+
+<div align="center">
+
+| Category Pillar | Monitored Sources | Plain-English Human Translation | Safety Verdict |
+|:---:|---|---|:---:|
+| **⚙️ System & Hardware** | `System`, SCM, Kernel-General | *"Normal internal coordination between Windows background services (DCOM). Everything is fine."* | <kbd style="color: #6EE7B7;">✓ NORMAL</kbd> |
+| **📦 Software & Apps** | `Application`, WER Diagnostics | *"A software application crashed or closed unexpectedly."* | <kbd style="color: #FDE68A;">⚠️ WARNING</kbd> |
+| **⚡ Scripts & Commands** | `PowerShell/Operational` | *"PowerShell console started."* / *"PowerShell executed an automated script block."* | <kbd style="color: #6EE7B7;">✓ NORMAL</kbd> |
+| **🛡️ Security & Access** | `Security` (Audit, Auth, Accounts) | *"An account signed in successfully."* / *"🚨 DANGER: Computer security audit logs were deliberately wiped!"* | <kbd style="color: #FCA5A5;">🚨 CRITICAL</kbd> |
+| **🌐 Network & Web** | NetworkProfile, Syslog, HTTP logs | *"Network adapter connected to a network."* | <kbd style="color: #6EE7B7;">✓ NORMAL</kbd> |
+
+</div>
+
+- **💡 Plain-English Explainability Modal**: Clicking `💡 Explain` presents a clear 5-point breakdown with calm reassurance for benign events and actionable steps for real threats.
+- **📄 Raw Tech Payload Inspector**: Power users can toggle into unparsed XML, raw parameters, or JSON payloads with a single click.
+- **📁 Multi-Format Forensic Dropzone**: Drag and drop `.evtx`, `.log`, `.json`, `.csv`, or `.txt` files for instant offline threat auditing and one-click Markdown/JSON report export.
 
 <br>
 <br>
@@ -379,48 +404,59 @@ ThreatLens maintains an exhaustive automated testing suite validating static PE 
 ============================= test session starts =============================
 platform win32 -- Python 3.12.8, pytest-9.1.1, pluggy-1.6.0
 rootdir: C:\Users\STEBY_VARGHESE\Desktop\ThreatLens
-collected 38 items
+collected 49 items
 
 tests/test_assistant.py::test_assistant_intents PASSED                   [  2%]
-tests/test_correlation.py::test_attack_chain_correlation PASSED          [  5%]
-tests/test_database.py::test_init_and_add_event PASSED                   [  7%]
-tests/test_database.py::test_add_events_batch PASSED                     [ 10%]
-tests/test_database.py::test_upsert_process_and_status PASSED            [ 13%]
-tests/test_database.py::test_alerts_and_resolution PASSED                [ 15%]
-tests/test_gui_smoke.py::test_gui_initialization_and_views PASSED        [ 18%]
-tests/test_gui_smoke.py::test_event_card_widget_instantiation PASSED     [ 21%]
-tests/test_gui_smoke.py::test_gui_responsiveness_and_adaptive_resizing PASSED [ 23%]
-tests/test_gui_smoke.py::test_all_views_text_icons_and_dialog_legibility PASSED [ 26%]
-tests/test_gui_smoke.py::test_interactive_actions_execution PASSED       [ 28%]
-tests/test_monitors.py::test_process_risk_heuristics PASSED              [ 31%]
-tests/test_monitors.py::test_file_handler_ignore_patterns PASSED         [ 34%]
-tests/test_network.py::test_port_descriptions PASSED                     [ 36%]
-tests/test_nlp_model.py::test_model_asset_size_under_20mb PASSED         [ 39%]
-tests/test_nlp_model.py::test_cyber_tokenizer PASSED                     [ 42%]
-tests/test_nlp_model.py::test_nlp_threat_command_classification PASSED   [ 44%]
-tests/test_nlp_model.py::test_assistant_query_intent_classification PASSED [ 47%]
-tests/test_nlp_model.py::test_inference_latency_benchmark PASSED         [ 50%]
-tests/test_nlp_model.py::test_core_engine_nlp_telemetry_enrichment PASSED [ 52%]
-tests/test_nlp_model.py::test_cybernlp_plain_english_specificity_and_reasons PASSED [ 55%]
-tests/test_nlp_model.py::test_explain_engine_cybernlp_breakdown_integration PASSED [ 57%]
-tests/test_pillars_expansion.py::test_glossary_translation PASSED        [ 60%]
-tests/test_pillars_expansion.py::test_dns_resolver PASSED                [ 63%]
-tests/test_pillars_expansion.py::test_clipboard_clipper_detection PASSED [ 65%]
-tests/test_pillars_expansion.py::test_firewall_rule_database_persistence PASSED [ 68%]
-tests/test_repository_search_all PASSED                                  [ 71%]
-tests/test_pillars_expansion.py::test_signature_verifier_missing_file PASSED [ 73%]
-tests/test_pillars_expansion.py::test_self_defense_engine PASSED         [ 76%]
-tests/test_pillars_expansion.py::test_service_task_summary PASSED        [ 78%]
-tests/test_quarantine.py::test_quarantine_and_restore PASSED             [ 81%]
-tests/test_quarantine.py::test_restore_protected_or_existing_file PASSED [ 84%]
-tests/test_scanner.py::test_entropy_calculation PASSED                   [ 86%]
-tests/test_scanner.py::test_known_hash_detection PASSED                  [ 89%]
-tests/test_scanner.py::test_suspicious_payload_heuristics PASSED         [ 92%]
-tests/test_scoring.py::test_explain_simple_summaries PASSED              [ 94%]
+tests/test_correlation.py::test_attack_chain_correlation PASSED          [  4%]
+tests/test_database.py::test_init_and_add_event PASSED                   [  6%]
+tests/test_database.py::test_add_events_batch PASSED                     [  8%]
+tests/test_database.py::test_upsert_process_and_status PASSED            [ 10%]
+tests/test_database.py::test_alerts_and_resolution PASSED                [ 12%]
+tests/test_gui_smoke.py::test_gui_initialization_and_views PASSED        [ 14%]
+tests/test_gui_smoke.py::test_event_card_widget_instantiation PASSED     [ 16%]
+tests/test_gui_smoke.py::test_gui_responsiveness_and_adaptive_resizing PASSED [ 18%]
+tests/test_gui_smoke.py::test_all_views_text_icons_and_dialog_legibility PASSED [ 20%]
+tests/test_gui_smoke.py::test_interactive_actions_execution PASSED       [ 22%]
+tests/test_log_analyzer.py::test_parse_event_xml_1102 PASSED             [ 24%]
+tests/test_log_analyzer.py::test_brute_force_logon_burst_4625 PASSED     [ 26%]
+tests/test_log_analyzer.py::test_rogue_user_creation_4720 PASSED         [ 28%]
+tests/test_log_analyzer.py::test_malicious_service_7045 PASSED           [ 30%]
+tests/test_log_analyzer.py::test_powershell_scriptblock_4104 PASSED      [ 32%]
+tests/test_log_analyzer.py::test_parse_json_lines_log_file PASSED        [ 34%]
+tests/test_log_analyzer.py::test_parse_web_attack_log_file PASSED        [ 36%]
+tests/test_log_analyzer.py::test_windows_event_log_monitor_lifecycle PASSED [ 38%]
+tests/test_log_analyzer.py::test_log_analysis_view_instantiation PASSED  [ 40%]
+tests/test_log_analyzer.py::test_plain_english_translations PASSED       [ 42%]
+tests/test_log_analyzer.py::test_monitor_category_and_plain_english_search PASSED [ 44%]
+tests/test_monitors.py::test_process_risk_heuristics PASSED              [ 46%]
+tests/test_monitors.py::test_file_handler_ignore_patterns PASSED         [ 48%]
+tests/test_network.py::test_port_descriptions PASSED                     [ 51%]
+tests/test_nlp_model.py::test_model_asset_size_under_20mb PASSED         [ 53%]
+tests/test_nlp_model.py::test_cyber_tokenizer PASSED                     [ 55%]
+tests/test_nlp_model.py::test_nlp_threat_command_classification PASSED   [ 57%]
+tests/test_nlp_model.py::test_assistant_query_intent_classification PASSED [ 59%]
+tests/test_nlp_model.py::test_inference_latency_benchmark PASSED         [ 61%]
+tests/test_nlp_model.py::test_core_engine_nlp_telemetry_enrichment PASSED [ 63%]
+tests/test_nlp_model.py::test_cybernlp_plain_english_specificity_and_reasons PASSED [ 65%]
+tests/test_nlp_model.py::test_explain_engine_cybernlp_breakdown_integration PASSED [ 67%]
+tests/test_pillars_expansion.py::test_glossary_translation PASSED        [ 69%]
+tests/test_dns_resolver PASSED                                            [ 71%]
+tests/test_clipboard_clipper_detection PASSED                             [ 73%]
+tests/test_firewall_rule_database_persistence PASSED                     [ 75%]
+tests/test_repository_search_all PASSED                                  [ 77%]
+tests/test_signature_verifier_missing_file PASSED                         [ 79%]
+tests/test_self_defense_engine PASSED                                     [ 81%]
+tests/test_service_task_summary PASSED                                    [ 83%]
+tests/test_quarantine.py::test_quarantine_and_restore PASSED             [ 85%]
+tests/test_restore_protected_or_existing_file PASSED                     [ 87%]
+tests/test_scanner.py::test_entropy_calculation PASSED                   [ 89%]
+tests/test_scanner.py::test_known_hash_detection PASSED                  [ 91%]
+tests/test_suspicious_payload_heuristics PASSED                         [ 93%]
+tests/test_scoring.py::test_explain_simple_summaries PASSED              [ 95%]
 tests/test_scoring.py::test_explain_why_breakdown PASSED                 [ 97%]
 tests/test_scoring.py::test_security_score_calculator PASSED             [100%]
 
-============================= 38 passed in 19.79s =============================
+============================= 49 passed in 14.56s =============================
 ```
 
 <br>
