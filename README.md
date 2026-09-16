@@ -62,6 +62,7 @@ Download the standalone setup wizard for **64-bit Windows 10 & Windows 11**:
   <img src="https://img.shields.io/badge/DOWNLOAD-THREATLENS%20SETUP%20(x64)-0284c7?style=for-the-badge&logo=windows&logoColor=white" height="42" alt="Download ThreatLens Setup" />
 </a>
 
+
 <br><br>
 
 | Package | OS Compatibility | Architecture | Installer Executable | Status |
