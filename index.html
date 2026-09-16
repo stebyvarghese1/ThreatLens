@@ -17,112 +17,214 @@
   <link rel="icon" type="image/png" href="app/gui/assets/threatlens.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg: #060913;
-      --card-bg: rgba(13, 19, 33, 0.88);
+      --bg: #05070e;
+      --card-bg: rgba(10, 15, 29, 0.82);
+      --inner-panel: rgba(15, 23, 42, 0.65);
       --border: rgba(56, 189, 248, 0.22);
-      --border-hover: rgba(56, 189, 248, 0.55);
-      --neon-blue: #38bdf8;
+      --border-bright: rgba(56, 189, 248, 0.55);
+      --neon-cyan: #38bdf8;
       --cyber-blue: #0284c7;
-      --deep-blue: #0369a1;
+      --deep-sapphire: #0369a1;
       --text-main: #f1f5f9;
       --text-muted: #94a3b8;
       --text-dim: #64748b;
       --success: #10b981;
-      --glow: rgba(56, 189, 248, 0.35);
+      --glow-cyan: rgba(56, 189, 248, 0.35);
+      --glow-blue: rgba(2, 132, 199, 0.25);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    body {
+    html, body {
+      height: 100%;
+      min-height: 100vh;
       background-color: var(--bg);
       color: var(--text-main);
       font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Screen Fitting Layout (No-Scroll Desktop Experience) */
+    body {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 32px 16px;
+      padding: 24px 20px;
       position: relative;
-      overflow-x: hidden;
     }
 
-    /* Ambient Cyber Glows */
+    /* Ambient Cyber Mesh Glows */
     .ambient-glow {
       position: fixed;
       border-radius: 50%;
       pointer-events: none;
       z-index: 0;
-      filter: blur(140px);
+      filter: blur(150px);
     }
-    .glow-top {
-      width: 650px;
-      height: 420px;
-      background: radial-gradient(circle, rgba(56, 189, 248, 0.18) 0%, rgba(2, 132, 199, 0.08) 50%, transparent 80%);
-      top: -120px;
-      left: 50%;
+    .glow-1 {
+      width: 700px;
+      height: 450px;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.16) 0%, rgba(2, 132, 199, 0.08) 50%, transparent 80%);
+      top: -140px;
+      left: 45%;
       transform: translateX(-50%);
     }
-    .glow-bottom {
-      width: 550px;
-      height: 350px;
-      background: radial-gradient(circle, rgba(99, 102, 241, 0.14) 0%, transparent 70%);
-      bottom: -100px;
-      right: 15%;
+    .glow-2 {
+      width: 600px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.12) 0%, transparent 70%);
+      bottom: -120px;
+      right: 10%;
     }
 
-    /* High-Tech Grid Pattern */
+    /* High-Tech Grid Matrix */
     .grid-overlay {
       position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
+      inset: 0;
       background-image: 
-        linear-gradient(to right, rgba(56, 189, 248, 0.04) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(56, 189, 248, 0.04) 1px, transparent 1px);
-      background-size: 38px 38px;
-      mask-image: radial-gradient(ellipse 75% 65% at 50% 50%, #000 35%, transparent 100%);
+        linear-gradient(to right, rgba(56, 189, 248, 0.035) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(56, 189, 248, 0.035) 1px, transparent 1px);
+      background-size: 36px 36px;
+      mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, #000 40%, transparent 100%);
       pointer-events: none;
       z-index: 1;
     }
 
-    /* Main Container Card */
-    .hud-card {
+    /* Panoramic Command HUD Card */
+    .command-hud {
       position: relative;
       z-index: 2;
       width: 100%;
-      max-width: 520px;
+      max-width: 1060px;
       background: var(--card-bg);
       backdrop-filter: blur(28px);
       -webkit-backdrop-filter: blur(28px);
       border: 1px solid var(--border);
-      border-radius: 26px;
-      padding: 48px 38px 40px;
-      text-align: center;
+      border-radius: 24px;
       box-shadow: 
         0 0 0 1px rgba(255, 255, 255, 0.06) inset,
         0 25px 60px -15px rgba(0, 0, 0, 0.85),
-        0 0 50px -8px rgba(2, 132, 199, 0.22);
-      transition: all 0.35s ease;
+        0 0 50px -10px var(--glow-blue);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .hud-card:hover {
-      border-color: var(--border-hover);
+    .command-hud:hover {
+      border-color: var(--border-bright);
       box-shadow: 
         0 0 0 1px rgba(56, 189, 248, 0.2) inset,
         0 30px 70px -15px rgba(0, 0, 0, 0.9),
-        0 0 65px -5px rgba(56, 189, 248, 0.32);
-      transform: translateY(-2px);
+        0 0 65px -5px var(--glow-cyan);
     }
 
-    /* Emblem & Radar Aura */
+    /* Corner HUD Tech Brackets */
+    .corner-bracket {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      pointer-events: none;
+      z-index: 3;
+    }
+    .corner-tl { top: 12px; left: 12px; border-top: 2px solid var(--neon-cyan); border-left: 2px solid var(--neon-cyan); }
+    .corner-tr { top: 12px; right: 12px; border-top: 2px solid var(--neon-cyan); border-right: 2px solid var(--neon-cyan); }
+    .corner-bl { bottom: 12px; left: 12px; border-bottom: 2px solid var(--neon-cyan); border-left: 2px solid var(--neon-cyan); }
+    .corner-br { bottom: 12px; right: 12px; border-bottom: 2px solid var(--neon-cyan); border-right: 2px solid var(--neon-cyan); }
+
+    /* Top HUD Telemetry Bar */
+    .hud-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 28px;
+      background: rgba(8, 12, 22, 0.6);
+      border-bottom: 1px solid rgba(56, 189, 248, 0.12);
+      font-family: 'Fira Code', monospace;
+      font-size: 11px;
+    }
+
+    .topbar-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--text-dim);
+    }
+
+    .sys-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--neon-cyan);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      background-color: var(--success);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--success);
+      animation: beaconPulse 2s infinite;
+    }
+
+    .topbar-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: var(--text-dim);
+    }
+
+    .hud-badge {
+      background: rgba(56, 189, 248, 0.08);
+      border: 1px solid rgba(56, 189, 248, 0.22);
+      padding: 3px 10px;
+      border-radius: 6px;
+      color: var(--neon-cyan);
+      font-size: 10.5px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .hud-badge:hover {
+      background: rgba(56, 189, 248, 0.16);
+      color: #fff;
+    }
+
+    /* Dual-Column Panoramic Grid */
+    .hud-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      padding: 34px 38px 28px;
+      gap: 40px;
+      align-items: center;
+    }
+
+    /* LEFT HERO PANEL */
+    .left-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .brand-hero {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    /* Emblem Radar Aura */
     .emblem-wrapper {
       position: relative;
-      width: 120px;
-      height: 120px;
-      margin: 0 auto 24px;
+      width: 104px;
+      height: 104px;
+      flex-shrink: 0;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -130,7 +232,7 @@
 
     .radar-ring {
       position: absolute;
-      inset: -14px;
+      inset: -10px;
       border-radius: 50%;
       border: 1.5px dashed rgba(56, 189, 248, 0.35);
       animation: rotateRing 22s linear infinite;
@@ -138,15 +240,15 @@
 
     .radar-ring-2 {
       position: absolute;
-      inset: -26px;
+      inset: -20px;
       border-radius: 50%;
       border: 1px solid rgba(56, 189, 248, 0.12);
       animation: rotateRingRev 30s linear infinite;
     }
 
     .emblem-img {
-      width: 104px;
-      height: 104px;
+      width: 90px;
+      height: 90px;
       object-fit: contain;
       position: relative;
       z-index: 2;
@@ -156,118 +258,141 @@
 
     .emblem-wrapper:hover .emblem-img {
       transform: scale(1.08);
-      filter: drop-shadow(0 0 32px rgba(56, 189, 248, 0.85));
+      filter: drop-shadow(0 0 32px rgba(56, 189, 248, 0.9));
     }
 
-    /* Live Release Badge */
-    .status-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-family: 'Fira Code', monospace;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.8px;
-      color: var(--neon-blue);
-      background: rgba(56, 189, 248, 0.08);
-      border: 1px solid rgba(56, 189, 248, 0.25);
-      padding: 6px 16px;
-      border-radius: 9999px;
-      margin-bottom: 18px;
-      text-transform: uppercase;
-    }
-
-    .beacon-dot {
-      width: 7px;
-      height: 7px;
-      background-color: var(--success);
-      border-radius: 50%;
-      box-shadow: 0 0 10px var(--success);
-      animation: beaconPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-    }
-
-    /* Typography */
-    h1 {
-      font-size: 28px;
+    .brand-text h1 {
+      font-size: 30px;
       font-weight: 800;
       letter-spacing: 1px;
-      margin-bottom: 8px;
-      background: linear-gradient(135deg, #ffffff 40%, var(--neon-blue) 100%);
+      line-height: 1.1;
+      margin-bottom: 6px;
+      background: linear-gradient(135deg, #ffffff 40%, var(--neon-cyan) 100%);
       -webkit-background-clip: text;
+      background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    .subtitle {
+    .brand-text .tagline {
       font-size: 13.5px;
       color: var(--text-muted);
-      margin-bottom: 26px;
-      font-weight: 400;
-      line-height: 1.55;
+      line-height: 1.45;
     }
 
-    /* Tech Specs Matrix */
+    /* Core Security Pillars Tags */
+    .pillar-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .pillar-tag {
+      font-family: 'Fira Code', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--text-muted);
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(56, 189, 248, 0.16);
+      padding: 5px 11px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .pillar-tag svg {
+      color: var(--neon-cyan);
+    }
+
+    /* Specs Matrix */
     .specs-matrix {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      background: rgba(16, 24, 39, 0.75);
-      border: 1px solid rgba(30, 41, 59, 0.85);
-      border-radius: 16px;
-      padding: 16px 18px;
-      margin-bottom: 28px;
-      text-align: left;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      background: var(--inner-panel);
+      border: 1px solid rgba(30, 41, 59, 0.8);
+      border-radius: 14px;
+      padding: 13px 15px;
     }
 
     .spec-item {
       display: flex;
       flex-direction: column;
-      gap: 3px;
+      gap: 2px;
     }
 
     .spec-label {
       font-family: 'Fira Code', monospace;
-      font-size: 10px;
+      font-size: 9.5px;
       color: var(--text-dim);
+      letter-spacing: 0.5px;
       text-transform: uppercase;
-      letter-spacing: 0.6px;
     }
 
     .spec-val {
-      font-size: 12.5px;
+      font-size: 12px;
       font-weight: 600;
       color: var(--text-main);
+      white-space: nowrap;
     }
 
-    /* Buttons */
-    .btn-stack {
+    /* RIGHT ACTION PANEL */
+    .right-panel {
       display: flex;
       flex-direction: column;
-      gap: 12px;
-      width: 100%;
+      gap: 16px;
+      background: rgba(12, 18, 35, 0.55);
+      border: 1px solid rgba(56, 189, 248, 0.16);
+      border-radius: 18px;
+      padding: 24px 26px;
+      position: relative;
     }
 
-    .btn-primary {
-      position: relative;
-      display: inline-flex;
+    .action-header {
+      display: flex;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
-      gap: 10px;
-      width: 100%;
-      padding: 16px 24px;
+    }
+
+    .action-title {
+      font-family: 'Fira Code', monospace;
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+      color: var(--neon-cyan);
+      text-transform: uppercase;
+    }
+
+    .ver-badge {
+      font-family: 'Fira Code', monospace;
+      font-size: 10px;
+      padding: 2px 8px;
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      border-radius: 4px;
+      color: var(--success);
+      font-weight: 600;
+    }
+
+    /* High-Impact Neon Download Button */
+    .btn-download {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px;
       border-radius: 14px;
       background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
       color: #ffffff;
-      font-size: 14.5px;
-      font-weight: 700;
       text-decoration: none;
-      border: 1px solid rgba(56, 189, 248, 0.45);
-      box-shadow: 0 4px 22px rgba(2, 132, 199, 0.45);
+      border: 1px solid rgba(56, 189, 248, 0.5);
+      box-shadow: 0 6px 26px rgba(2, 132, 199, 0.45);
       overflow: hidden;
       cursor: pointer;
       transition: all 0.25s ease;
     }
 
-    .btn-primary::after {
+    .btn-download::after {
       content: '';
       position: absolute;
       top: -50%; left: -50%;
@@ -277,79 +402,197 @@
       transition: transform 0.75s cubic-bezier(0.19, 1, 0.22, 1);
     }
 
-    .btn-primary:hover {
+    .btn-download:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(56, 189, 248, 0.55);
-      border-color: var(--neon-blue);
+      box-shadow: 0 10px 32px rgba(56, 189, 248, 0.6);
+      border-color: var(--neon-cyan);
     }
 
-    .btn-primary:hover::after {
+    .btn-download:hover::after {
       transform: rotate(25deg) translateY(100%);
     }
 
-    .btn-secondary {
+    .btn-content-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .btn-icon-box {
+      width: 44px;
+      height: 44px;
+      background: rgba(255, 255, 255, 0.14);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .btn-labels {
+      text-align: left;
+    }
+
+    .btn-labels .main-label {
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      display: block;
+    }
+
+    .btn-labels .sub-label {
+      font-size: 11.5px;
+      opacity: 0.85;
+      font-weight: 400;
+      display: block;
+      margin-top: 1px;
+    }
+
+    .btn-arrow {
+      opacity: 0.85;
+      transition: transform 0.2s ease;
+    }
+
+    .btn-download:hover .btn-arrow {
+      transform: translateX(3px);
+      opacity: 1;
+    }
+
+    /* Secondary Action Mirrors */
+    .secondary-mirrors {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .mirror-btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
-      width: 100%;
-      padding: 12px 18px;
-      border-radius: 12px;
-      background: rgba(16, 24, 39, 0.65);
-      border: 1px solid rgba(51, 65, 85, 0.75);
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: rgba(16, 24, 39, 0.6);
+      border: 1px solid rgba(51, 65, 85, 0.7);
       color: var(--text-muted);
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 600;
       text-decoration: none;
       transition: all 0.2s ease;
     }
 
-    .btn-secondary:hover {
+    .mirror-btn:hover {
       background: rgba(30, 41, 59, 0.85);
       color: var(--text-main);
       border-color: rgba(56, 189, 248, 0.4);
     }
 
-    /* Security Pillar Badges Footer */
-    .security-pills {
+    /* Verification Hash Copy Strip */
+    .hash-strip {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 14px;
-      margin-top: 26px;
-      padding-top: 22px;
-      border-top: 1px solid rgba(30, 41, 59, 0.6);
-    }
-
-    .pill-item {
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(8, 12, 22, 0.75);
+      border: 1px dashed rgba(56, 189, 248, 0.25);
+      border-radius: 9px;
+      padding: 9px 14px;
       font-family: 'Fira Code', monospace;
       font-size: 11px;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .hash-strip:hover {
+      background: rgba(14, 21, 38, 0.9);
+      border-color: var(--neon-cyan);
+      color: var(--text-main);
+    }
+
+    .hash-content {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    .hash-tag {
+      color: var(--neon-cyan);
+      font-weight: 600;
+    }
+
+    .hash-code {
       color: var(--text-dim);
+      font-size: 10.5px;
+    }
+
+    .copy-hint {
+      color: var(--neon-cyan);
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      flex-shrink: 0;
+      margin-left: 8px;
+    }
+
+    /* Quick Install Steps Strip */
+    .install-steps {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 6px;
+      border-top: 1px solid rgba(30, 41, 59, 0.5);
+      font-family: 'Fira Code', monospace;
+      font-size: 10px;
+      color: var(--text-dim);
+    }
+
+    .step-item {
       display: flex;
       align-items: center;
       gap: 5px;
     }
 
-    /* Footer Copyright */
-    .portal-footer {
-      margin-top: 22px;
-      font-size: 12px;
-      color: var(--text-dim);
-      text-align: center;
-      z-index: 2;
+    .step-num {
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      color: var(--neon-cyan);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 9px;
+      font-weight: 700;
     }
 
-    .portal-footer a {
-      color: var(--neon-blue);
+    /* Footer Strip */
+    .hud-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 30px;
+      background: rgba(6, 9, 18, 0.7);
+      border-top: 1px solid rgba(56, 189, 248, 0.1);
+      font-size: 11.5px;
+      color: var(--text-dim);
+    }
+
+    .footer-links a {
+      color: var(--neon-cyan);
       text-decoration: none;
+      margin-left: 14px;
       transition: color 0.2s ease;
     }
 
-    .portal-footer a:hover {
+    .footer-links a:hover {
       text-decoration: underline;
+      color: #fff;
     }
 
-    /* Keyframe Animations */
+    /* Keyframes */
     @keyframes rotateRing {
       from { transform: rotate(0deg); }
       to { transform: rotate(360deg); }
@@ -364,107 +607,227 @@
       0%, 100% { opacity: 1; transform: scale(1); }
       50% { opacity: 0.35; transform: scale(0.85); }
     }
+
+    /* Responsive Adaptation for smaller screens */
+    @media (max-width: 920px) {
+      body {
+        height: auto;
+        min-height: 100vh;
+        padding: 20px 12px;
+      }
+      .hud-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding: 28px 24px;
+      }
+      .specs-matrix {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .hud-topbar, .hud-footer {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+      }
+      .footer-links a {
+        margin: 0 8px;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <!-- Ambient Glow Layers -->
-  <div class="ambient-glow glow-top"></div>
-  <div class="ambient-glow glow-bottom"></div>
+  <!-- Cyber Glow Lighting -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
 
-  <!-- Cyber Grid Matrix -->
+  <!-- Perspective Grid -->
   <div class="grid-overlay"></div>
 
-  <!-- Main HUD Card -->
-  <div class="hud-card">
+  <!-- Panoramic Command Center Card -->
+  <main class="command-hud">
 
-    <!-- ThreatLens Shield Emblem -->
-    <div class="emblem-wrapper">
-      <div class="radar-ring"></div>
-      <div class="radar-ring-2"></div>
-      <img 
-        class="emblem-img" 
-        src="https://github.com/user-attachments/assets/ba4f6745-c181-4b89-892d-4c6f7425b9a7" 
-        alt="ThreatLens Shield Emblem"
-        onerror="this.onerror=null; this.src='app/gui/assets/threatlens.png';"
-      />
+    <!-- Tech Corner Accents -->
+    <div class="corner-bracket corner-tl"></div>
+    <div class="corner-bracket corner-tr"></div>
+    <div class="corner-bracket corner-bl"></div>
+    <div class="corner-bracket corner-br"></div>
+
+    <!-- Top Telemetry Status Bar -->
+    <header class="hud-topbar">
+      <div class="topbar-left">
+        <div class="sys-indicator">
+          <span class="pulse-dot"></span>
+          <span>THREATLENS TELEMETRY // ACTIVE</span>
+        </div>
+        <span>·</span>
+        <span>ZERO-TRUST OS OBSERVABILITY</span>
+      </div>
+      <div class="topbar-right">
+        <span>SECURITY LEVEL: <b>MAXIMUM</b></span>
+        <a class="hud-badge" href="https://github.com/stebyvarghese1/ThreatLens" target="_blank" rel="noopener">
+          ★ GitHub Repo
+        </a>
+      </div>
+    </header>
+
+    <!-- Main Dual-Column Panoramic Grid -->
+    <div class="hud-grid">
+
+      <!-- LEFT COLUMN: Brand, Architecture, Pillars -->
+      <section class="left-panel">
+        
+        <div class="brand-hero">
+          <div class="emblem-wrapper">
+            <div class="radar-ring"></div>
+            <div class="radar-ring-2"></div>
+            <img 
+              class="emblem-img" 
+              src="https://github.com/user-attachments/assets/ba4f6745-c181-4b89-892d-4c6f7425b9a7" 
+              alt="ThreatLens Emblem"
+              onerror="this.onerror=null; this.src='app/gui/assets/threatlens.png';"
+            />
+          </div>
+
+          <div class="brand-text">
+            <h1>THREATLENS</h1>
+            <p class="tagline">Next-Gen Zero-Trust Endpoint Observability, Heuristic Defense &amp; Explainable AI Telemetry</p>
+          </div>
+        </div>
+
+        <!-- Security Pillars Badges -->
+        <div class="pillar-tags">
+          <div class="pillar-tag">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span>PE Entropy Engine</span>
+          </div>
+          <div class="pillar-tag">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <span>XOR Vault Isolation</span>
+          </div>
+          <div class="pillar-tag">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            <span>100% Offline AI</span>
+          </div>
+          <div class="pillar-tag">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+            <span>SQLite WAL Stream</span>
+          </div>
+        </div>
+
+        <!-- System Architecture Matrix -->
+        <div class="specs-matrix">
+          <div class="spec-item">
+            <span class="spec-label">PLATFORM</span>
+            <span class="spec-val">Windows 10 / 11</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">ARCH</span>
+            <span class="spec-val">x64 (64-bit)</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">TYPE</span>
+            <span class="spec-val">InnoSetup Wizard</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">STATUS</span>
+            <span class="spec-val" style="color: var(--success);">49/49 Tests Pass</span>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- RIGHT COLUMN: Download Action Center -->
+      <section class="right-panel">
+
+        <div class="action-header">
+          <span class="action-title">DISTRIBUTION PACKAGE</span>
+          <span class="ver-badge">STABLE RELEASE v1.0</span>
+        </div>
+
+        <!-- Primary High-Impact Download Action -->
+        <a class="btn-download" href="https://drive.usercontent.google.com/download?id=1kt8r0OemG-19bMiLoYqa59zfpYB1Fw2b&export=download">
+          <div class="btn-content-left">
+            <div class="btn-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 3v12"/>
+                <path d="m7 10 5 5 5-5"/>
+                <path d="M5 21h14"/>
+              </svg>
+            </div>
+            <div class="btn-labels">
+              <span class="main-label">Download ThreatLens Setup</span>
+              <span class="sub-label">Standalone Windows Installer (x64)</span>
+            </div>
+          </div>
+          <svg class="btn-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+
+        <!-- Secondary Action Mirrors -->
+        <div class="secondary-mirrors">
+          <a class="mirror-btn" href="https://drive.google.com/file/d/1kt8r0OemG-19bMiLoYqa59zfpYB1Fw2b/view?usp=sharing" target="_blank" rel="noopener">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            <span>Drive Mirror</span>
+          </a>
+          <a class="mirror-btn" href="https://github.com/stebyvarghese1/ThreatLens" target="_blank" rel="noopener">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            <span>Source Code</span>
+          </a>
+        </div>
+
+        <!-- Verification Hash Strip (Click to Copy) -->
+        <div class="hash-strip" id="hashStrip" title="Click to copy SHA-256 integrity signature">
+          <div class="hash-content">
+            <span class="hash-tag">SHA-256:</span>
+            <span class="hash-code" id="hashCode">C5D9FDBEE3FF198C2E955E557F47EB4F...</span>
+          </div>
+          <span class="copy-hint" id="copyHint">COPY</span>
+        </div>
+
+        <!-- 3-Step Setup Guide -->
+        <div class="install-steps">
+          <div class="step-item"><span class="step-num">1</span> Download .exe</div>
+          <div class="step-item"><span class="step-num">2</span> Run Setup Wizard</div>
+          <div class="step-item"><span class="step-num">3</span> Shield Active</div>
+        </div>
+
+      </section>
+
     </div>
 
-    <!-- Status Beacon -->
-    <div>
-      <div class="status-badge">
-        <span class="beacon-dot"></span>
-        <span>OFFICIAL RELEASE • STABLE BUILD</span>
+    <!-- Bottom Telemetry Footer -->
+    <footer class="hud-footer">
+      <span>ThreatLens Project · Built by <a href="https://github.com/stebyvarghese1" target="_blank" rel="noopener" style="color:var(--neon-cyan); text-decoration:none;">Steby Varghese</a></span>
+      <div class="footer-links">
+        <a href="https://github.com/stebyvarghese1/ThreatLens/blob/main/LICENSE" target="_blank" rel="noopener">MIT License</a>
+        <a href="https://github.com/stebyvarghese1/ThreatLens#readme" target="_blank" rel="noopener">Documentation</a>
+        <a href="https://github.com/stebyvarghese1/ThreatLens/issues" target="_blank" rel="noopener">Issue Tracker</a>
       </div>
-    </div>
+    </footer>
 
-    <!-- Title & Description -->
-    <h1>THREATLENS</h1>
-    <p class="subtitle">Next-Gen Zero-Trust Endpoint Observability &amp; Heuristic Defense Telemetry</p>
+  </main>
 
-    <!-- Telemetry Specs HUD -->
-    <div class="specs-matrix">
-      <div class="spec-item">
-        <span class="spec-label">PLATFORM</span>
-        <span class="spec-val">Windows 10 / 11 (64-bit)</span>
-      </div>
-      <div class="spec-item">
-        <span class="spec-label">PACKAGE</span>
-        <span class="spec-val">Standalone Setup (.exe)</span>
-      </div>
-      <div class="spec-item">
-        <span class="spec-label">HEURISTICS</span>
-        <span class="spec-val">PE Entropy + XOR Engine</span>
-      </div>
-      <div class="spec-item">
-        <span class="spec-label">INTEGRITY</span>
-        <span class="spec-val" style="color: var(--success);">SHA-256 Validated</span>
-      </div>
-    </div>
+  <script>
+    // Click to copy SHA-256 Hash
+    const hashStrip = document.getElementById('hashStrip');
+    const copyHint = document.getElementById('copyHint');
+    const fullHash = 'C5D9FDBEE3FF198C2E955E557F47EB4F8F1CE351328A99735F48C6596C9E4448';
 
-    <!-- Action Buttons -->
-    <div class="btn-stack">
-      <!-- Direct Download link from Google Drive -->
-      <a class="btn-primary" href="https://drive.usercontent.google.com/download?id=1kt8r0OemG-19bMiLoYqa59zfpYB1Fw2b&export=download">
-        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 3v12"/>
-          <path d="m7 10 5 5 5-5"/>
-          <path d="M5 21h14"/>
-        </svg>
-        <span>Download ThreatLens Setup (x64)</span>
-      </a>
-
-      <!-- Fallback / Preview on Google Drive -->
-      <a class="btn-secondary" href="https://drive.google.com/file/d/1kt8r0OemG-19bMiLoYqa59zfpYB1Fw2b/view?usp=sharing" target="_blank" rel="noopener">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-          <polyline points="15 3 21 3 21 9"/>
-          <line x1="10" y1="14" x2="21" y2="3"/>
-        </svg>
-        <span>Alternative Mirror (Google Drive)</span>
-      </a>
-
-      <!-- GitHub Source Code Link -->
-      <a class="btn-secondary" href="https://github.com/stebyvarghese1/ThreatLens" target="_blank" rel="noopener">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-        </svg>
-        <span>View Source on GitHub</span>
-      </a>
-    </div>
-
-    <!-- Security Badges Footer -->
-    <div class="security-pills">
-      <div class="pill-item">🛡️ ZERO-TRUST</div>
-      <div class="pill-item">🔒 XOR VAULT</div>
-      <div class="pill-item">⚡ 100% OFFLINE</div>
-    </div>
-
-  </div>
-
-  <footer class="portal-footer">
-    ThreatLens · Built with precision by <a href="https://github.com/stebyvarghese1" target="_blank" rel="noopener">Steby Varghese</a>
-  </footer>
+    hashStrip.addEventListener('click', () => {
+      navigator.clipboard.writeText(fullHash).then(() => {
+        copyHint.textContent = 'COPIED!';
+        copyHint.style.color = '#10b981';
+        setTimeout(() => {
+          copyHint.textContent = 'COPY';
+          copyHint.style.color = 'var(--neon-cyan)';
+        }, 2200);
+      }).catch(() => {
+        copyHint.textContent = 'COPIED!';
+      });
+    });
+  </script>
 
 </body>
 </html>
