@@ -12,47 +12,7 @@
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=16&duration=2500&pause=1000&color=38BDF8&center=true&vCenter=true&width=380&lines=Development+Ongoing......" alt="development ongoing......" />
 </p>
 
-
 <br>
-
-
-
-
-
-
-### Windows 10 / 11 — x64
-
-Download and Test the ThreatLens installer for **64-bit Windows 10 and Windows 11**:
-
-**[⬇️ Download ThreatLens for Windows x64](https://drive.google.com/file/d/1Gse_VsVDe8GeS5ZgExggnpuZPO6x2pT_/view?usp=sharing)**
-
-**Installer:** `threatlens_setup.exe`
-
-### System Requirements
-
- **OS:** Windows 10 / Windows 11
- **Architecture:** x64 (64-bit)
- **Installer:** `threatlens_setup.exe`
-
-> **Note:** ThreatLens is currently provided as a Windows x64 application. Download and run the installer to install ThreatLens on your PC.
-
-
-
-
-
-
-
-
-
-<br>
-<br>
-<br>
-
-
-
-
-
-
 
 <h3><b><code>&gt; THREATLENS // NEXT-GEN CYBER TRANSPARENCY &amp; ENDPOINT TELEMETRY</code></b></h3>
 
@@ -81,9 +41,40 @@ Download and Test the ThreatLens installer for **64-bit Windows 10 and Windows 1
 &nbsp;
 [![Forks](https://img.shields.io/github/forks/stebyvarghese1/ThreatLens?style=flat-square&color=0284c7&label=Forks)](https://github.com/stebyvarghese1/ThreatLens/forks)
 &nbsp;
-[![Tests](https://img.shields.io/badge/TEST_SUITE-18%2F18%20PASSING-10B981?style=flat-square&logo=pytest&logoColor=white)](tests/)
+[![Tests](https://img.shields.io/badge/TEST_SUITE-38%2F38%20PASSING-10B981?style=flat-square&logo=pytest&logoColor=white)](tests/)
 &nbsp;
 [![Operated by](https://img.shields.io/badge/SECURITY_ARCHITECT-Steby%20Varghese-38bdf8?style=flat-square)](https://github.com/stebyvarghese1)
+
+<br><br>
+
+<!-- Windows Installer Download Card -->
+<table>
+<tr>
+<td align="center" style="background: #0d1321; border: 1px solid #1e293b; border-radius: 12px; padding: 20px;">
+
+### ⬇️ Official Windows Release (x64)
+
+Download the standalone setup wizard for **64-bit Windows 10 & Windows 11**:
+
+<br>
+
+<a href="https://drive.google.com/file/d/1kt8r0OemG-19bMiLoYqa59zfpYB1Fw2b/view?usp=sharing">
+  <img src="https://img.shields.io/badge/DOWNLOAD-THREATLENS%20SETUP%20(x64)-0284c7?style=for-the-badge&logo=windows&logoColor=white" height="42" alt="Download ThreatLens Setup" />
+</a>
+
+<br><br>
+
+| Package | OS Compatibility | Architecture | Installer Executable | Status |
+|:---:|:---:|:---:|:---:|:---:|
+| **ThreatLens v1.0** | Windows 10 / Windows 11 | **x64 (64-bit)** | `threatlens_setup.exe` | <kbd>STABLE RELEASE</kbd> |
+
+<br>
+
+<sub>💡 <b>Quick Setup:</b> Download and run <code>threatlens_setup.exe</code> to launch the installation wizard. ThreatLens will configure system tray background monitoring, desktop icons, and local offline protection.</sub>
+
+</td>
+</tr>
+</table>
 
 </div>
 
@@ -189,12 +180,16 @@ When legacy antivirus detects suspicious behavior, it flashes a vague pop-up: `"
 
 | Status | Defense Module | Engine Telemetry | Tactical Function |
 |:---:|---|---|---|
+| <kbd>ACTIVE</kbd> | **CyberNLP Semantic Classifier** | Embedded CyberNLP Engine (<2MB) | Decodes obfuscated commands & maps execution strings to MITRE ATT&CK tactics with 99%+ confidence. |
 | <kbd>ACTIVE</kbd> | **Process Lineage Sentinel** | `psutil` + Win32 API | Tracks parent-child process chains and flags obfuscated CLI flags (`-enc`, `IEX`, `bypass`). |
 | <kbd>ACTIVE</kbd> | **File System Watchdog** | Windows `ReadDirectoryChangesW` | High-frequency surveillance over `Downloads`, `Desktop`, and `Startup` directories. |
 | <kbd>ACTIVE</kbd> | **Network Socket Probe** | TCP/UDP Sockets | Maps PIDs to remote IPs and translates technical ports (`443`, `53`, `8080`) into plain English. |
+| <kbd>ARMED</kbd> | **Endpoint Firewall Isolator** | Windows NetSh / AdvFirewall | Instant network isolation cutting inbound and outbound connectivity for active malicious processes. |
+| <kbd>ACTIVE</kbd> | **Clipboard Clipper Sentry** | Regex & Shannon Entropy | Real-time clipboard surveillance to intercept and neutralize cryptocurrency address hijackers. |
 | <kbd>ARMED</kbd> | **Persistence Watchdog** | `winreg` Native Hive Sentinel | Real-time surveillance over Windows Registry `Run`, `RunOnce`, and Startup auto-start hooks. |
 | <kbd>ARMED</kbd> | **Canary Ransomware Decoys** | Honeypot Canary Tripwires | Hidden decoy files (`.threatlens_canary.docx`) trigger emergency quarantine upon encryption. |
-| <kbd>SECURE</kbd> | **XOR Encrypted Vault** | Byte-Transformation Sandbox | Reversible containment chamber preventing accidental execution with one-click restore. |
+| <kbd>ARMED</kbd> | **Local Tamper Self-Defense** | OS File Lock & Integrity Sentinel | Locks ThreatLens SQLite DB, local models, and quarantine vault against unauthorized external modification. |
+| <kbd>SECURE</kbd> | **XOR Encrypted Vault** | Byte-Transformation Sandbox | Reversible containment chamber preventing accidental execution with smart system-fallback protection. |
 
 </div>
 
@@ -208,6 +203,7 @@ When legacy antivirus detects suspicious behavior, it flashes a vague pop-up: `"
 |:---:|---|---|---|
 | <kbd>ONLINE</kbd> | **0–100 Health Scoring** | Multi-factor Risk Aggregation | Explains every single deduction point in clear, human-understandable terms. |
 | <kbd>ONLINE</kbd> | **"Why?" Contextual Engine** | 5-Point Explainability Grammar | Instant breakdown: *What happened? Who did it? Where? Why does it matter? Recommended action.* |
+| <kbd>ONLINE</kbd> | **Plain-English Reasons** | Action-Specific Decoders | Explains why programs execute, what they are doing, and provides clear threat categorizations. |
 | <kbd>LEARNING</kbd> | **Application Profiler** | Baseline Habit Learning | Calculates a dynamic 0–100% Trust Meter and flags unexpected outbound network bursts. |
 | <kbd>READY</kbd> | **"Ask ThreatLens" Q&A** | Deterministic Intent Parser | Offline assistant answering *"What happened on my PC today?"* or *"Why is my system slow?"* |
 | <kbd>READY</kbd> | **Automated Security Reports** | Audit Synthesizer | Formatted executive security reports exportable directly to Markdown and plain text. |
@@ -383,28 +379,48 @@ ThreatLens maintains an exhaustive automated testing suite validating static PE 
 ============================= test session starts =============================
 platform win32 -- Python 3.12.8, pytest-9.1.1, pluggy-1.6.0
 rootdir: C:\Users\STEBY_VARGHESE\Desktop\ThreatLens
-collected 18 items
+collected 38 items
 
-tests/test_assistant.py::test_assistant_intents PASSED                   [  5%]
-tests/test_correlation.py::test_attack_chain_correlation PASSED          [ 11%]
-tests/test_database.py::test_init_and_add_event PASSED                   [ 16%]
-tests/test_database.py::test_add_events_batch PASSED                     [ 22%]
-tests/test_database.py::test_upsert_process_and_status PASSED            [ 27%]
-tests/test_database.py::test_alerts_and_resolution PASSED                [ 33%]
-tests/test_gui_smoke.py::test_gui_initialization_and_views PASSED        [ 38%]
-tests/test_gui_smoke.py::test_event_card_widget_instantiation PASSED     [ 44%]
-tests/test_monitors.py::test_process_risk_heuristics PASSED              [ 50%]
-tests/test_monitors.py::test_file_handler_ignore_patterns PASSED         [ 55%]
-tests/test_network.py::test_port_descriptions PASSED                     [ 61%]
-tests/test_quarantine.py::test_quarantine_and_restore PASSED             [ 66%]
-tests/test_scanner.py::test_entropy_calculation PASSED                   [ 72%]
-tests/test_scanner.py::test_known_hash_detection PASSED                  [ 77%]
-tests/test_scanner.py::test_suspicious_payload_heuristics PASSED         [ 83%]
-tests/test_scoring.py::test_explain_simple_summaries PASSED              [ 88%]
-tests/test_scoring.py::test_explain_why_breakdown PASSED                 [ 94%]
+tests/test_assistant.py::test_assistant_intents PASSED                   [  2%]
+tests/test_correlation.py::test_attack_chain_correlation PASSED          [  5%]
+tests/test_database.py::test_init_and_add_event PASSED                   [  7%]
+tests/test_database.py::test_add_events_batch PASSED                     [ 10%]
+tests/test_database.py::test_upsert_process_and_status PASSED            [ 13%]
+tests/test_database.py::test_alerts_and_resolution PASSED                [ 15%]
+tests/test_gui_smoke.py::test_gui_initialization_and_views PASSED        [ 18%]
+tests/test_gui_smoke.py::test_event_card_widget_instantiation PASSED     [ 21%]
+tests/test_gui_smoke.py::test_gui_responsiveness_and_adaptive_resizing PASSED [ 23%]
+tests/test_gui_smoke.py::test_all_views_text_icons_and_dialog_legibility PASSED [ 26%]
+tests/test_gui_smoke.py::test_interactive_actions_execution PASSED       [ 28%]
+tests/test_monitors.py::test_process_risk_heuristics PASSED              [ 31%]
+tests/test_monitors.py::test_file_handler_ignore_patterns PASSED         [ 34%]
+tests/test_network.py::test_port_descriptions PASSED                     [ 36%]
+tests/test_nlp_model.py::test_model_asset_size_under_20mb PASSED         [ 39%]
+tests/test_nlp_model.py::test_cyber_tokenizer PASSED                     [ 42%]
+tests/test_nlp_model.py::test_nlp_threat_command_classification PASSED   [ 44%]
+tests/test_nlp_model.py::test_assistant_query_intent_classification PASSED [ 47%]
+tests/test_nlp_model.py::test_inference_latency_benchmark PASSED         [ 50%]
+tests/test_nlp_model.py::test_core_engine_nlp_telemetry_enrichment PASSED [ 52%]
+tests/test_nlp_model.py::test_cybernlp_plain_english_specificity_and_reasons PASSED [ 55%]
+tests/test_nlp_model.py::test_explain_engine_cybernlp_breakdown_integration PASSED [ 57%]
+tests/test_pillars_expansion.py::test_glossary_translation PASSED        [ 60%]
+tests/test_pillars_expansion.py::test_dns_resolver PASSED                [ 63%]
+tests/test_pillars_expansion.py::test_clipboard_clipper_detection PASSED [ 65%]
+tests/test_pillars_expansion.py::test_firewall_rule_database_persistence PASSED [ 68%]
+tests/test_repository_search_all PASSED                                  [ 71%]
+tests/test_pillars_expansion.py::test_signature_verifier_missing_file PASSED [ 73%]
+tests/test_pillars_expansion.py::test_self_defense_engine PASSED         [ 76%]
+tests/test_pillars_expansion.py::test_service_task_summary PASSED        [ 78%]
+tests/test_quarantine.py::test_quarantine_and_restore PASSED             [ 81%]
+tests/test_quarantine.py::test_restore_protected_or_existing_file PASSED [ 84%]
+tests/test_scanner.py::test_entropy_calculation PASSED                   [ 86%]
+tests/test_scanner.py::test_known_hash_detection PASSED                  [ 89%]
+tests/test_scanner.py::test_suspicious_payload_heuristics PASSED         [ 92%]
+tests/test_scoring.py::test_explain_simple_summaries PASSED              [ 94%]
+tests/test_scoring.py::test_explain_why_breakdown PASSED                 [ 97%]
 tests/test_scoring.py::test_security_score_calculator PASSED             [100%]
 
-============================= 18 passed in 3.05s ==============================
+============================= 38 passed in 19.79s =============================
 ```
 
 <br>
