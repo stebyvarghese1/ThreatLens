@@ -58,16 +58,15 @@ Download the standalone setup wizard for **64-bit Windows 10 & Windows 11**:
 
 <br>
 
-<a href="https://stebyvarghese1.github.io/ThreatLens/">
+<a href="https://github.com/stebyvarghese1/ThreatLens/releases/download/v1/threatlens_setup.exe">
   <img src="https://img.shields.io/badge/DOWNLOAD-THREATLENS%20SETUP%20(x64)-0284c7?style=for-the-badge&logo=windows&logoColor=white" height="42" alt="Download ThreatLens Setup" />
 </a>
-
 
 <br><br>
 
 | Package | OS Compatibility | Architecture | Installer Executable | Status |
 |:---:|:---:|:---:|:---:|:---:|
-| **ThreatLens v1.0** | Windows 10 / Windows 11 | **x64 (64-bit)** | `threatlens_setup.exe` | <kbd>STABLE RELEASE</kbd> |
+| **ThreatLens v1.0** | Windows 10 / Windows 11 | **x64 (64-bit)** | [`threatlens_setup.exe`](https://github.com/stebyvarghese1/ThreatLens/releases/download/v1/threatlens_setup.exe) | [<kbd>STABLE RELEASE (v1)</kbd>](https://github.com/stebyvarghese1/ThreatLens/releases/tag/v1) |
 
 <br>
 
