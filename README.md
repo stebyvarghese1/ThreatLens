@@ -114,8 +114,7 @@ Download the standalone setup wizard for **64-bit Windows 10 & Windows 11**:
 
 <br>
 
-<img src="<img width="1917" height="1021" alt="Screenshot 2026-09-17 125945" src="https://github.com/user-attachments/assets/079e0000-872d-44b3-8989-3f46c8b34d7b" />
-" width="96%" style="border-radius: 8px; border: 1px solid #1E293B;"/>
+<img src="https://github.com/user-attachments/assets/079e0000-872d-44b3-8989-3f46c8b34d7b"  width="96%" style="border-radius: 8px; border: 1px solid #1E293B;"/>
 <br><br>
 <b><code>[ FORENSICS // PROCESS LINEAGE &amp; THREAT SCANNER ]</code></b>
 <br>
