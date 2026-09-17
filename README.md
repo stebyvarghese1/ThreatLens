@@ -58,7 +58,7 @@ Download the standalone setup wizard for **64-bit Windows 10 & Windows 11**:
 
 <br>
 
-<a href="https://github.com/stebyvarghese1/ThreatLens/releases/download/v1/threatlens_setup.exe">
+<a href="https://github.com/stebyvarghese1/ThreatLens/releases/download/v1/ThreatLens_Setup.exe">
   <img src="https://img.shields.io/badge/DOWNLOAD-THREATLENS%20SETUP%20(x64)-0284c7?style=for-the-badge&logo=windows&logoColor=white" height="42" alt="Download ThreatLens Setup" />
 </a>
 
@@ -66,11 +66,11 @@ Download the standalone setup wizard for **64-bit Windows 10 & Windows 11**:
 
 | Package | OS Compatibility | Architecture | Installer Executable | Status |
 |:---:|:---:|:---:|:---:|:---:|
-| **ThreatLens v1.0** | Windows 10 / Windows 11 | **x64 (64-bit)** | [`threatlens_setup.exe`](https://github.com/stebyvarghese1/ThreatLens/releases/download/v1/threatlens_setup.exe) | [<kbd>STABLE RELEASE (v1)</kbd>](https://github.com/stebyvarghese1/ThreatLens/releases/tag/v1) |
+| **ThreatLens v1.0** | Windows 10 / Windows 11 | **x64 (64-bit)** | [`ThreatLens_Setup.exe`](https://github.com/stebyvarghese1/ThreatLens/releases/download/v1/ThreatLens_Setup.exe) | [<kbd>STABLE RELEASE (v1)</kbd>](https://github.com/stebyvarghese1/ThreatLens/releases/tag/v1) |
 
 <br>
 
-<sub>💡 <b>Quick Setup:</b> Download and run <code>threatlens_setup.exe</code> to launch the installation wizard. ThreatLens launches in full maximized command center view, configures system tray background protection, and activates 100% offline security monitoring.</sub>
+<sub>💡 <b>Quick Setup:</b> Download and run <code>ThreatLens_Setup.exe</code> to launch the installation wizard. ThreatLens launches in full maximized command center view, configures system tray background protection, and activates 100% offline security monitoring.</sub>
 
 </td>
 </tr>
