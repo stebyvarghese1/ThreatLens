@@ -96,14 +96,14 @@ Download the standalone setup wizard for **64-bit Windows 10 & Windows 11**:
 <table>
 <tr>
 <td align="center" width="50%">
-<img src="https://github.com/user-attachments/assets/821cdfde-6635-403e-802d-60ff26dc8599" width="100%" style="border-radius: 8px; border: 1px solid #1E293B;"/>
+<img src="https://github.com/user-attachments/assets/86a07e0d-d9b4-40f8-8670-b571384f7d97" width="100%" style="border-radius: 8px; border: 1px solid #1E293B;"/>
 <br><br>
 <b><code>[ HUD // OVERVIEW &amp; HARDWARE HEALTH ]</code></b>
 <br>
 <sub>Dynamic 0–100 Security Gauge, Real-Time Hardware Resource Meters (RAM, CPU, GPU, Disk, Network), and 9 Active Defense Shields.</sub>
 </td>
 <td align="center" width="50%">
-<img src="https://github.com/user-attachments/assets/e64e94cf-5781-43ee-8f73-e8562c26993c" width="100%" style="border-radius: 8px; border: 1px solid #1E293B;"/>
+<img src="https://github.com/user-attachments/assets/d2a365e7-87e1-4726-ad7d-bdfeddd9132a" width="100%" style="border-radius: 8px; border: 1px solid #1E293B;"/>
 <br><br>
 <b><code>[ TELEMETRY // LIVE ACTIVITY &amp; WHY? ENGINE ]</code></b>
 <br>
@@ -114,7 +114,8 @@ Download the standalone setup wizard for **64-bit Windows 10 & Windows 11**:
 
 <br>
 
-<img src="https://github.com/user-attachments/assets/8cf455cd-1c44-45fe-9a51-50a4f8e0281e" width="96%" style="border-radius: 8px; border: 1px solid #1E293B;"/>
+<img src="<img width="1917" height="1021" alt="Screenshot 2026-09-17 125945" src="https://github.com/user-attachments/assets/079e0000-872d-44b3-8989-3f46c8b34d7b" />
+" width="96%" style="border-radius: 8px; border: 1px solid #1E293B;"/>
 <br><br>
 <b><code>[ FORENSICS // PROCESS LINEAGE &amp; THREAT SCANNER ]</code></b>
 <br>
